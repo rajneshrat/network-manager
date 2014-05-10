@@ -45,7 +45,7 @@ struct vm_operations_struct mmap_vm_ops = {
 
 int my_close(struct inode *inode, struct file *filp)
 {
-    free_pages((unsigned long)data, 10);
+    free_pages((unsigned long)data, 1);
     return 0;
 }
 
@@ -54,7 +54,7 @@ node *user_in_driver_out;
 
 int device_open(struct inode *inode, struct file *filp)
 {
-    data	 =	__get_free_pages(GFP_KERNEL, 10);
+    data	 =	__get_free_pages(GFP_KERNEL, 1);
     driver_in_user_out = (node *) data;
     user_in_driver_out = (node *) data + 1024 * 5;
     strcpy(data,"rahul sings\n");

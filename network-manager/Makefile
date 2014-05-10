@@ -1,5 +1,5 @@
 obj-m += module.o  
-module-objs :=  kernels.o timer.o net_hook.o
+module-objs :=  kernels.o timer.o net_hook.o lmalloc.o
  
 #bandwidthsetter.o
 
